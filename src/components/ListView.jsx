@@ -22,7 +22,11 @@ const ListView = ({ searchQuery }) => {
   }, []);
 
   if (loading) {
-    return <CircularProgress color="secondary" />;
+    return (
+      <div className="loading-container">
+        <CircularProgress color="secondary" />
+      </div>
+    );
   }
   // filter posts based on search query
   const filteredPosts = posts.filter(post =>
